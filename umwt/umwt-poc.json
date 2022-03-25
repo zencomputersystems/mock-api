@@ -1,0 +1,141 @@
+{
+  "uuid": "b56a37f6-588a-4330-a5f8-804d63372f54",
+  "lastMigration": 19,
+  "name": "UMWT POC",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3014,
+  "hostname": "0.0.0.0",
+  "routes": [
+    {
+      "uuid": "c1353a9c-3cbd-4350-8e60-13a4270701cd",
+      "documentation": "Get list of staff",
+      "method": "get",
+      "endpoint": "staff",
+      "responses": [
+        {
+          "uuid": "cfe76d10-7b33-47b4-a7e5-427a904e7d78",
+          "body": "[\n  {\n    \"staffid\": \"12345678\",\n    \"Staff Name\": \"Tarmizi @ Tarmimi bin Jaafar\",\n    \"Email\": \"tarmizi@umwt.local\"\n  },\n  {\n    \"staffid\": \"12345679\",\n    \"Staff Name\": \"Rogayah binti Anuar\",\n    \"Email\": \"rogayah@umwt.local\"\n  }\n  ]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "body",
+              "modifier": "",
+              "value": "",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    },
+    {
+      "uuid": "c5e90409-9472-441f-a430-4d09c60d505e",
+      "documentation": "Get details of given :staffid",
+      "method": "get",
+      "endpoint": "staff/:staffid",
+      "responses": [
+        {
+          "uuid": "a2a81672-a7e2-4bdb-a7d1-00f1392cbdce",
+          "body": "{\n  \"error\": \"Not found\"\n}",
+          "latency": 0,
+          "statusCode": 404,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "a11c18b2-1cc8-4365-807e-dddfa1764899",
+          "body": "{\n  \"staffid\": \"12345679\",\n  \"Staff Name\": \"Rogayah binti Anuar\",\n  \"Email\": \"rogayah@umwt.local\",\n  \"Company\": \"UMWT Toyota\",\n  \"Division\": \"Division A\",\n  \"Designation\": \"Engineer\",\n  \"Cost Center\": \"Cost Center A\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "staffid",
+              "value": "12345679",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        },
+        {
+          "uuid": "427d3d29-ec41-493a-9981-4132026f0a63",
+          "body": "{\n  \"staffid\": \"12345678\",\n  \"Staff Name\": \"Tarmizi @ Tarmimi bin Jaafar\",\n  \"Email\": \"tarmizi@umwt.local\",\n  \"Company\": \"UMWT Toyota\",\n  \"Division\": \"Division A\",\n  \"Designation\": \"Engineer\",\n  \"Cost Center\": \"Cost Center A\"\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "staffid",
+              "value": "12345678",
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ]
+}
