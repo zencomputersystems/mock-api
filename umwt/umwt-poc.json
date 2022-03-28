@@ -105,6 +105,31 @@
       "enabled": true,
       "randomResponse": false,
       "sequentialResponse": false
+    },
+    {
+      "uuid": "fdbe69fa-ec96-4e71-b7be-1ae9cc79a860",
+      "documentation": "List of asset types",
+      "method": "get",
+      "endpoint": "assettype",
+      "responses": [
+        {
+          "uuid": "e37244a3-45e9-4a78-9694-bf87b03653d0",
+          "body": "[\n  {\n    \"AssetType\": \"Laptop / iPad\"\n  },\n  {\n    \"AssetType\": \"Digital / Video Camera\"\n  },\n  {\n    \"AssetType\": \"Handphone\"\n  },\n  {\n    \"AssetType\": \"Projector\"\n  },\n  {\n    \"AssetType\": \"Walkie-Talkie\"\n  }\n]",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "filePath": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false
+        }
+      ],
+      "enabled": true,
+      "randomResponse": false,
+      "sequentialResponse": false
     }
   ],
   "proxyMode": false,
