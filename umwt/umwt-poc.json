@@ -11,7 +11,7 @@
       "uuid": "c1353a9c-3cbd-4350-8e60-13a4270701cd",
       "documentation": "Get list of staff",
       "method": "get",
-      "endpoint": "staff",
+      "endpoint": "staff/list",
       "responses": [
         {
           "uuid": "cfe76d10-7b33-47b4-a7e5-427a904e7d78",
